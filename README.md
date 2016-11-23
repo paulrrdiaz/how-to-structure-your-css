@@ -147,6 +147,7 @@ a.admin-center-tabs-item {
 }
 ```
 ### Organizing CSS
+- [ITCSS - Inverted Triangle CSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 - [OOCSS - Object Oriented CSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 - [SMACss - Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [BEM - Block Element Modifier](http://getbem.com/)
@@ -170,7 +171,7 @@ $colors: (
   red: #f26363,
   red-pressed: #d85858,
   white: #fff,
-  _black: #000,
+  black: #000,
 );
 
 $font-families: (
@@ -320,6 +321,11 @@ pre {
 - [Zeplin](https://zeplin.io/)
 - [Invision](https://invis.io/)
 - [W3C CSS Validation](http://jigsaw.w3.org/css-validator/)
+
+### Structuring your files
+- [Evernote](https://github.com/evernote/sass-build-structure)
+- [Sass project](http://thesassway.com/beginner/how-to-structure-a-sass-project)
+- [Scss-Styleguide with BEM, OOCSS & SMACSS](http://timhartmann.net/frontend-development/scss-styleguide-with-bem-oocss-smacss/)
 
 ### [PostCSS](https://github.com/postcss/postcss) and [CSS Modules](https://github.com/css-modules/css-modules)
 Yei! code! finally :')
