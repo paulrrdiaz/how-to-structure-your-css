@@ -139,11 +139,11 @@ a.admin-center-tabs-item {
 - Alphabetical
 ```
 .some-class {
-  z-index: 10;
-  font-size: 16px;
+  background-color: blue;
   color: red;
   display: flex;
-  background-color: blue;
+  font-size: 16px;
+  z-index: 10;
 }
 ```
 ### Organizing CSS
