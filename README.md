@@ -1,5 +1,5 @@
 # How to Structure your CSS
-*NOTE: Everything you see/read is advice not rules*
+*NOTE: Everything you see/read here is advice not rules*
 
 ## Good Practices
 
