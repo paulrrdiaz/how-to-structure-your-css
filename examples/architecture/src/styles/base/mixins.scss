@@ -1,0 +1,104 @@
+@mixin font-size($fontValue : map-get($font-styles, base-font-size), $baseFontValue : map-get($font-styles, base-font-size), $baseLineValue : map-get($font-styles, base-line-height)) {
+	font-size   : #{$fontValue}px;
+	font-size   : #{($fontValue / $baseFontValue)}rem;
+	line-height : #{($fontValue / $baseFontValue) * $baseLineValue}px;
+	line-height : #{($baseLineValue/$baseFontValue) * ($fontValue / $baseFontValue)}rem;
+}
+
+@mixin lato() {
+	font-family: map-get($font-families, lato);
+	font-weight: normal;
+}
+@mixin lato-bold() {
+	font-family: map-get($font-families, lato);
+	font-weight: bold;
+}
+
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin transition($properties...) {
+	@if length($properties) >= 1 {
+    @include css3-prefix("transition", $properties);
+  }
+
+  @else {
+    @include css3-prefix("transition",  "all 0.2s ease-in-out 0s");
+  }
+}
+
+@mixin opacity($opacity: 0.5) {
+	$opacityMultiplied: ($opacity * 100);
+
+	filter:         alpha(opacity=$opacityMultiplied);
+	-ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+	@include css3-prefix("opacity", $opacity);
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+	    content: "";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+@mixin border-radius($radius: 4px) {
+	@include css3-prefix("border-radius", $radius);
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+	@if ($inset != "") {
+		@include css3-prefix("box-shadow", $inset $x $y $blur $color);
+	} @else {
+		@include css3-prefix("box-shadow", $x $y $blur $color);
+	}
+}
+
+@mixin transform($params) {
+	@include css3-prefix("transform", $params);
+}
+
+@mixin transform-origin($params) {
+  @include css3-prefix("transform-origin", $params);
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin placeholder-color($color) {
+	::-webkit-input-placeholder,
+	:-moz-placeholder,
+	::-moz-placeholder,
+	:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin display-flex() {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex-wrap($param) {
+	-ms-flex-wrap: $param;
+	-webkit-flex-wrap: $param;
+  flex-wrap: $param;
+}

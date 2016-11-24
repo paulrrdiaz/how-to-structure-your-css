@@ -1,0 +1,7 @@
+.layout-container {
+  @include display-flex();
+}
+
+.layout-content {
+  flex: 4;
+}
