@@ -1,7 +1,16 @@
 # How to Structure your CSS
-*NOTE: Everything you see/read is advice not rules*
+### Paúl Díaz Navarrete
+### @paulrrdiaz
+
+---
+
+### BTW: Everything you see/read is advice not rules
+
+---
 
 ## Good Practices
+
+---
 
 ### Internal Standards
 Keep it consistent and simple, you have to be empathetic with other developers and the most difficult thing is to agree on what kind of standards you're going to use but when you cross that bridge you'll be confident in your team and it'll make a high impact in any project.
@@ -9,6 +18,8 @@ You can check some examples from other companies:
 - [PrimerCSS/Github](http://primercss.io/)
 - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)
 - [Idiomatic CSS](https://github.com/necolas/idiomatic-css)
+
+---
 
 ### Basics
 - Each style gets its own line.
@@ -19,35 +30,46 @@ You can check some examples from other companies:
   border: 1px solid black;
 }
 ```
+
+---
+
+### Basics
 - Check Frameworks like [Material Framework](http://nt1m.github.io/material-framework/#introduction), [Bootstrap](http://getbootstrap.com/), [Foundation](http://foundation.zurb.com/), etc; to understand why they did those things.
 - Don't forget the reset, all browsers have some inconsistencies such as heights, font sizes, margins, etc; thus we should clean it up.
-- Use classes instead of tags *I'm pretty sure that I don't have to talk about IDs*
+
+---
+
+### Basics
+- Use classes instead of tags (I'm pretty sure that I don't have to talk about IDs)
 ```
 HTML
 <div class="admin-center-tabs">
-  <a class="admin-center-tabs-item" href="javascript:;">I'm a link</a>
+  <a class="admin-center-tabs-item" href="javascript:;">Im a link</a>
 </div>
-
+```
+```
 CSS
-// Not a good idea
+// Really bad idea
 .admin-center-tabs {
-  > a {
+  a {
     @include font-size(14);
     color: green;
   }
 }
-// or
 a.admin-center-tabs-item {
   @include font-size(14);
   color: green;
 }
-
 // Good idea
 .admin-center-tabs-item {
   @include font-size(14);
   color: green;
 }
 ```
+
+---
+
+### Basics
 - Comment your CSS(optional)
 - Use [EditorConfig](http://editorconfig.org/) *please*
 - Try to use Generic Classes
@@ -55,15 +77,17 @@ a.admin-center-tabs-item {
 .pull-left {
   float: left;
 }
-
 .pull-right {
   float: right;
 }
-
 .text-center {
   text-align: center;
 }
 ```
+
+---
+
+### Basics
 - Avoid extra selectors
 ```
 // Really bad idea
@@ -83,19 +107,19 @@ a.admin-center-tabs-item {
     }
   }
 }
-
 // Good idea
 .admin-center-header-title {
   @include font-size(18);
   color: red;
   margin: 0;
 }
-
 .admin-center-header-subtitle {
   @include font-size(12);
   color: blue;
 }
 ```
+
+---
 
 ### Order your CSS properties
 - Randomly(**YOLO**)
@@ -108,6 +132,10 @@ a.admin-center-tabs-item {
   background-color: blue;
 }
 ```
+
+---
+
+### Order your CSS properties
 - Grouped by type
 ```
 .some-class {
@@ -136,6 +164,10 @@ a.admin-center-tabs-item {
   cursor: pointer;
 }
 ```
+
+---
+
+### Order your CSS properties
 - Alphabetical
 ```
 .some-class {
@@ -146,11 +178,16 @@ a.admin-center-tabs-item {
   z-index: 10;
 }
 ```
+
+---
+
 ### Organizing CSS
 - [ITCSS - Inverted Triangle CSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 - [OOCSS - Object Oriented CSS](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 - [SMACss - Scalable and Modular Architecture for CSS](https://smacss.com/)
 - [BEM - Block Element Modifier](http://getbem.com/)
+
+---
 
 ### Choose a preprocessor
 There are lot of reasons for doing this, my favorites:
@@ -173,44 +210,52 @@ $colors: (
   white: #fff,
   black: #000,
 );
-
 $font-families: (
   droid: ("Droid Serif", serif),
   lato: ("Lato", sans-serif),
 );
-
 $font-styles: (
   base-font-size: 16,
   base-line-height: 24,
 );
-
 $sizes: (
   gutter: 20px,
   radius: 4px,
 );
 ```
+
+---
+
+### Choose a preprocessor
 - **import** | Remember that CSS @import makes another http request to fetch another stylesheet, while a Sass @import grabs the content from inside your imported file and includes it within the compiled stylesheet.
 ```
 // shared component
 @import 'components/buttons';
-
 // view specific css
 @import 'views/admin-center';
 ```
+
+---
+
+### Choose a preprocessor
 - **@mixins** | Anything which helps you write less code is welcome and mixins are my favorites ones
 ```
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
-   -khtml-#{$property}: #{$value};
-     -moz-#{$property}: #{$value};
-      -ms-#{$property}: #{$value};
-       -o-#{$property}: #{$value};
-          #{$property}: #{$value};
+  -khtml-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  -o-#{$property}: #{$value};
+  #{$property}: #{$value};
 }
 @mixin border-radius($radius: 4px) {
-	@include css3-prefix("border-radius", $radius);
+  @include css3-prefix("border-radius", $radius);
 }
 ```
+
+---
+
+### Choose a preprocessor
 - **@extend** | You can attach all the attributes from a class to another one
 ```
 .btn-regular,
@@ -228,7 +273,6 @@ $sizes: (
   outline: none;
   padding: 0 (map-get($sizes, gutter) * 1.5);
 }
-
 .btn-small {
   @extend %btn-regular;
   height: 36px;
@@ -238,16 +282,17 @@ $sizes: (
 ```
 - Math, Loops, Functions, Interpolation...
 
+---
+
+### Choose a preprocessor
 and you have a plethora of options
 - [Sass](http://sass-lang.com/) <3
 ```
 SASS
 $serif-font-stack: "Georgia", "Times New Roman", serif
 $monospace-font-stack: "Cousin", "Courier"
-
 body
     font: normal 18px/22px $serif-font-stack
-
 pre, code
     font: 600 bold 18px/22px $monospace-font-stack
 ```
@@ -255,15 +300,17 @@ pre, code
 SCSS
 $serif-font-stack: "Georgia", "Times New Roman", serif;
 $monospace-font-stack: "Cousin", "Courier";
-
 body {
     font: normal 18px/22px $serif-font-stack;
 }
-
 pre, code {
     font: 600 bold 18px/22px $monospace-font-stack;
 }
 ```
+
+---
+
+### Choose a preprocessor
 - [Less](http://lesscss.org/)
 ```
 .button {
@@ -277,44 +324,52 @@ pre, code {
     margin: 5px;
     padding: 8px;
 }
-
 .button-checkout-process {
     .button(); /* Mixin */
     background-color: silver;
 }
 ```
+
+---
+
+### Choose a preprocessor
 - [Stylus](http://stylus-lang.com/)
 ```
 border-radius()
   -webkit-border-radius: arguments
   -moz-border-radius: arguments
   border-radius: arguments
-
 body
   font: 12px Helvetica, Arial, sans-serif
-
 a.button
   border-radius: 5px
 ```
+
+---
+
+### Choose a preprocessor
 - [Myth](http://www.myth.io/)
 ```
 :root {
   --purple: #847AD1;
   --large: 10px;
 }
-
 a {
   color: var(--purple);
 }
-
 pre {
   padding: var(--large);
 }
 ```
+
+---
+
 ### Create Documentation
 - [livingstyleguide](https://github.com/livingstyleguide/livingstyleguide)
 - [Hologram](https://trulia.github.io/hologram/)
 - [Documentcss](http://documentcss.com/)
+
+---
 
 ### We're not perfect people *but we're software engineers so it's almost the same* thus we need help!
 - Linters like [CSSLint](https://github.com/CSSLint/csslint), [ScssLint](https://github.com/brigade/scss-lint), [LessHint](https://github.com/lesshint/lesshint), etc.
@@ -322,15 +377,21 @@ pre {
 - [Invision](https://invis.io/)
 - [W3C CSS Validation](http://jigsaw.w3.org/css-validator/)
 
+---
+
 ### Structuring your files
 - [Evernote](https://github.com/evernote/sass-build-structure)
 - [Sass project](http://thesassway.com/beginner/how-to-structure-a-sass-project)
 - [Scss-Styleguide with BEM, OOCSS & SMACSS](http://timhartmann.net/frontend-development/scss-styleguide-with-bem-oocss-smacss/)
 
+---
+
 ### [PostCSS](https://github.com/postcss/postcss) and [CSS Modules](https://github.com/css-modules/css-modules)
+
+---
+
 Yei! code! finally :')
 
-### Interesting Links
-- [CSS4](https://webdesign.tutsplus.com/articles/css4-is-coming-what-you-need-to-know--webdesign-11521)
+---
 
 ## Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.
