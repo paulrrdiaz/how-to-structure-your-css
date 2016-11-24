@@ -1,10 +1,10 @@
 # How to Structure your CSS
-*NOTE: Everything you'll see/read in here are advice not rules*
+*NOTE: Everything you see/read is advice not rules*
 
 ## Good Practices
 
 ### Internal Standards
-Keep it consistent and simple, you have to be empathetic with other developers and the most difficult thing is agree on what kind of standards you're going to use but when you cross that bridge you'll be confident in your team and it'll have a high impact in any project.
+Keep it consistent and simple, you have to be empathetic with other developers and the most difficult thing is to agree on what kind of standards you're going to use but when you cross that bridge you'll be confident in your team and it'll make a high impact in any project.
 You can check some examples from other companies:
 - [PrimerCSS/Github](http://primercss.io/)
 - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml)
@@ -154,7 +154,7 @@ a.admin-center-tabs-item {
 
 ### Choose a preprocessor
 There are lot of reasons for doing this, my favorites:
-- **$variables** | It's not worth it have all these hexadecimal values or font names or sizes or anything that we're going to use and reuse in the future, right?
+- **$variables** | It's not worth it to have all these hexadecimal values or font names or sizes or anything that we're going to use and reuse in the future, right?
 ```
 /* variables.scss */
 $colors: (
@@ -330,4 +330,4 @@ pre {
 ### [PostCSS](https://github.com/postcss/postcss) and [CSS Modules](https://github.com/css-modules/css-modules)
 Yei! code! finally :')
 
-## Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.
+## Move fast and break things. if you are not breaking stuff, you are not moving fast enough.
