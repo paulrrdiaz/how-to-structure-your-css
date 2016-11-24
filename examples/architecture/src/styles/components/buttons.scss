@@ -1,0 +1,97 @@
+.btn,
+%btn {
+  @include border-radius(4px);
+  @include font-size(14);
+  @include lato-bold();
+  @include transition();
+  background-color: map-get($colors, white);
+  border: 1px solid map-get($colors, grey-hover);
+  color: map-get($colors, grey-hover);
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 36px;
+  margin-bottom: map-get($sizes, gutter);
+  padding: 0 (map-get($sizes, gutter) * 1.5);
+
+  &:focus {
+    @include box-shadow(0, 0, 0, transparent);
+    color: map-get($colors, grey-1);
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    @include box-shadow(0, 0, 0, transparent);
+    background-color: map-get($colors, grey-hover);
+    color: map-get($colors, white);
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: map-get($colors, grey-hover);
+  }
+}
+
+.btn-green {
+  border-color: map-get($colors, green);
+  color: map-get($colors, green);
+
+  &:hover,
+  &:active {
+    background-color: map-get($colors, green-hover);
+    color: map-get($colors, white);
+  }
+
+  &:active {
+    background-color: map-get($colors, green-hover);
+  }
+
+  &:focus:hover {
+    color: map-get($colors, white);
+  }
+}
+
+.btn-blue {
+  border-color: map-get($colors, blue);
+  color: map-get($colors, blue);
+
+  &:hover,
+  &:active {
+    background-color: map-get($colors, blue);
+    color: map-get($colors, white);
+  }
+
+  &:active {
+    background-color: map-get($colors, blue);
+  }
+
+  &:focus:hover {
+    color: map-get($colors, white);
+  }
+}
+
+.btn-red {
+  border-color: map-get($colors, red);
+  color: map-get($colors, red);
+
+  &:hover,
+  &:active {
+    background-color: map-get($colors, red);
+    color: map-get($colors, white);
+  }
+
+  &:active {
+    background-color: map-get($colors, red-hover);
+  }
+
+  &:focus:hover {
+    color: map-get($colors, white);
+  }
+}
+
+.btn-large {
+  @extend %btn;
+  display: block;
+  width: 100%;
+}

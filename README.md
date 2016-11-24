@@ -330,4 +330,7 @@ pre {
 ### [PostCSS](https://github.com/postcss/postcss) and [CSS Modules](https://github.com/css-modules/css-modules)
 Yei! code! finally :')
 
+### Interesting Links
+- [CSS4](https://webdesign.tutsplus.com/articles/css4-is-coming-what-you-need-to-know--webdesign-11521)
+
 ## Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.

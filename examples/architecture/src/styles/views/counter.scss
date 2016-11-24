@@ -1,0 +1,13 @@
+.counter-view {
+  padding: (map-get($sizes, gutter) * 2);
+}
+
+.counter-view-title {
+  @include font-size(40);
+  margin-bottom: map-get($sizes, gutter) * 2;
+}
+
+.counter-view-group {
+  @include display-flex();
+  justify-content: space-around;
+}

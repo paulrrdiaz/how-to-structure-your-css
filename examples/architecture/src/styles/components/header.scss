@@ -1,0 +1,35 @@
+.header {
+  background-color: map-get($colors, green);
+  flex: 1;
+  height: 100vh;
+  padding: map-get($sizes, gutter);
+}
+
+.header-title {
+  @include font-size(26);
+  color: map-get($colors, white);
+  margin-bottom: map-get($sizes, gutter);
+}
+
+.header-item {
+  @include font-size(16);
+  border-bottom: 1px solid map-get($colors, white);
+  color: map-get($colors, white);
+  display: block;
+  padding: (map-get($sizes, gutter) * .5) (map-get($sizes, gutter));
+
+  &.active {
+    background-color: map-get($colors, green-hover);
+    color: map-get($colors, white);
+  }
+
+  &:hover:not(.active) {
+    @include transition();
+    background-color: rgba(map-get($colors, green-hover), .6);
+    color: map-get($colors, white);
+  }
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}

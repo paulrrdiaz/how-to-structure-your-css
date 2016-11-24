@@ -1,0 +1,17 @@
+.dashboard-view {
+  @include display-flex();
+  @include flex-wrap(wrap);
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.dashboard-view-title {
+  @include font-size(40);
+  margin-bottom: map-get($sizes, gutter) * 2;
+}
+
+.dashboard-view-banner {
+  max-width: 50vw;
+}
