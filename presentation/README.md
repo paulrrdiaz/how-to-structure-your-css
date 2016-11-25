@@ -1,3 +1,7 @@
+![Able](/logo-able@2x.png)
+
+---
+
 # How to Structure your CSS
 ### Paúl Díaz Navarrete
 ### @paulrrdiaz
